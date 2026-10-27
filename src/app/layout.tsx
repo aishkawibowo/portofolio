@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Space_Grotesk, Plus_Jakarta_Sans, JetBrains_Mono } from 'next/font/google';
 import './globals.css';
 import { ClientLayout } from './ClientLayout';
+import { Analytics } from '@vercel/analytics/next';
 
 const spaceGrotesk = Space_Grotesk({
   variable: '--font-space-grotesk',
@@ -70,6 +71,7 @@ export default function RootLayout({
         suppressHydrationWarning
       >
         <ClientLayout>{children}</ClientLayout>
+        <Analytics />
       </body>
     </html>
   );
