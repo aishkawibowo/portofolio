@@ -1,0 +1,199 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="600" viewBox="0 0 960 600" fill="none">
+  <defs>
+    <linearGradient id="iotDarkBg" x1="0" y1="0" x2="960" y2="600" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#181222" />
+      <stop offset="100%" stop-color="#110B18" />
+    </linearGradient>
+    <linearGradient id="mapGlow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.12" />
+      <stop offset="100%" stop-color="#C4A1FF" stop-opacity="0.08" />
+    </linearGradient>
+  </defs>
+
+  <!-- Frame Background -->
+  <rect width="960" height="600" rx="16" fill="url(#iotDarkBg)"/>
+  <rect width="960" height="600" rx="16" stroke="#594466" stroke-width="1.5"/>
+
+  <!-- macOS Window Bar -->
+  <rect width="960" height="42" fill="#241B30" rx="16"/>
+  <rect y="30" width="960" height="12" fill="#241B30"/>
+  <line x1="0" y1="42" x2="960" y2="42" stroke="#594466" stroke-width="1"/>
+  <circle cx="28" cy="21" r="5" fill="#EF4444" opacity="0.85"/>
+  <circle cx="44" cy="21" r="5" fill="#F59E0B" opacity="0.85"/>
+  <circle cx="60" cy="21" r="5" fill="#10B981" opacity="0.85"/>
+  <text x="480" y="26" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#A99AB8" text-anchor="middle">Venambak IoT Aquaculture Platform — Real-Time Monitoring &amp; Telemetry v3</text>
+
+  <!-- Top App Navigation Bar (from Navbar.tsx) -->
+  <g transform="translate(0, 42)">
+    <rect width="960" height="48" fill="#1D1626"/>
+    <line x1="0" y1="48" x2="960" y2="48" stroke="#594466" stroke-width="1"/>
+    
+    <!-- Venambak Logo -->
+    <rect x="25" y="12" width="24" height="24" rx="6" fill="#C4A1FF"/>
+    <text x="37" y="29" font-family="system-ui, sans-serif" font-size="14" font-weight="900" fill="#17121F" text-anchor="middle">V</text>
+    <text x="58" y="28" font-family="system-ui, sans-serif" font-size="14" font-weight="800" fill="#FAF5FF">VENAMBAK</text>
+    
+    <!-- MQTT WebSocket Live Badge -->
+    <circle cx="168" cy="24" r="4" fill="#A8D5BA"/>
+    <text x="178" y="28" font-family="monospace" font-size="11" font-weight="600" fill="#A8D5BA">WS &amp; MQTT LIVE</text>
+
+    <!-- Nav Links: 8 screens in source code -->
+    <rect x="320" y="10" width="75" height="28" rx="6" fill="#382747"/>
+    <text x="357" y="28" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#C4A1FF" text-anchor="middle">Overview</text>
+
+    <text x="435" y="28" font-family="system-ui, sans-serif" font-size="11" fill="#A99AB8">Devices</text>
+    <text x="510" y="28" font-family="system-ui, sans-serif" font-size="11" fill="#A99AB8">Pools (12)</text>
+    <text x="590" y="28" font-family="system-ui, sans-serif" font-size="11" fill="#A99AB8">Sensors WQMS</text>
+    <text x="700" y="28" font-family="system-ui, sans-serif" font-size="11" fill="#A99AB8">AutoVenjet</text>
+
+    <!-- User Profile (Aishka) -->
+    <circle cx="915" cy="24" r="14" fill="#382747"/>
+    <text x="915" y="28" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#C4A1FF" text-anchor="middle">AW</text>
+  </g>
+
+  <!-- Stat Cards: Exact allowedTypes in OverviewScreen.tsx -->
+  <!-- KINCIRVE, FEEDERVE2, FEEDERVEPV, BLOWERVE, VENJET, BOXVE WQMS -->
+  <g transform="translate(25, 102)">
+    <!-- KincirVe -->
+    <rect width="138" height="74" rx="10" fill="#241B30" stroke="#594466" stroke-width="1"/>
+    <text x="12" y="22" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#A99AB8">KINCIRVE</text>
+    <text x="12" y="52" font-family="system-ui, sans-serif" font-size="22" font-weight="900" fill="#FAF5FF">32</text>
+    <text x="50" y="52" font-family="system-ui, sans-serif" font-size="10" fill="#75697D">Total</text>
+    <text x="126" y="52" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#A8D5BA" text-anchor="end">32 ●</text>
+
+    <!-- FeederVe2 -->
+    <rect x="153" width="138" height="74" rx="10" fill="#241B30" stroke="#594466" stroke-width="1"/>
+    <text x="165" y="22" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#A99AB8">FEEDERVE2</text>
+    <text x="165" y="52" font-family="system-ui, sans-serif" font-size="22" font-weight="900" fill="#FAF5FF">98</text>
+    <text x="203" y="52" font-family="system-ui, sans-serif" font-size="10" fill="#75697D">Total</text>
+    <text x="279" y="52" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#A8D5BA" text-anchor="end">94 ●</text>
+
+    <!-- FeederVePV -->
+    <rect x="306" width="138" height="74" rx="10" fill="#241B30" stroke="#594466" stroke-width="1"/>
+    <text x="318" y="22" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#A99AB8">FEEDERVEPV</text>
+    <text x="318" y="52" font-family="system-ui, sans-serif" font-size="22" font-weight="900" fill="#FAF5FF">54</text>
+    <text x="356" y="52" font-family="system-ui, sans-serif" font-size="10" fill="#75697D">Total</text>
+    <text x="432" y="52" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#A8D5BA" text-anchor="end">52 ●</text>
+
+    <!-- BlowerVe -->
+    <rect x="459" width="138" height="74" rx="10" fill="#241B30" stroke="#594466" stroke-width="1"/>
+    <text x="471" y="22" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#A99AB8">BLOWERVE</text>
+    <text x="471" y="52" font-family="system-ui, sans-serif" font-size="22" font-weight="900" fill="#FAF5FF">1</text>
+    <text x="495" y="52" font-family="system-ui, sans-serif" font-size="10" fill="#75697D">Unit</text>
+    <text x="585" y="52" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#A8D5BA" text-anchor="end">1 ●</text>
+
+    <!-- VenJet Inverter -->
+    <rect x="612" width="142" height="74" rx="10" fill="#241B30" stroke="#594466" stroke-width="1"/>
+    <text x="624" y="22" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#C4A1FF">VENJET INVERTER</text>
+    <text x="624" y="52" font-family="system-ui, sans-serif" font-size="22" font-weight="900" fill="#C4A1FF">151</text>
+    <text x="668" y="52" font-family="system-ui, sans-serif" font-size="10" fill="#75697D">Total</text>
+    <text x="742" y="52" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#A8D5BA" text-anchor="end">148 ●</text>
+
+    <!-- BoxVe WQMS -->
+    <rect x="769" width="146" height="74" rx="10" fill="#241B30" stroke="#594466" stroke-width="1"/>
+    <text x="781" y="22" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#38BDF8">BOXVE WQMS</text>
+    <text x="781" y="52" font-family="system-ui, sans-serif" font-size="22" font-weight="900" fill="#38BDF8">5</text>
+    <text x="805" y="52" font-family="system-ui, sans-serif" font-size="10" fill="#75697D">Multi-Probe</text>
+    <text x="903" y="52" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#A8D5BA" text-anchor="end">5 ●</text>
+  </g>
+
+  <!-- Real-Time MapPanel (from MapPanel.tsx - Indonesia Aquaculture Distribution) -->
+  <g transform="translate(25, 190)">
+    <rect width="580" height="385" rx="12" fill="#241B30" stroke="#594466" stroke-width="1"/>
+    
+    <!-- Map Header -->
+    <rect width="580" height="38" rx="12" fill="#1D1626"/>
+    <rect y="26" width="580" height="12" fill="#1D1626"/>
+    <text x="20" y="24" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#FAF5FF">Peta Distribusi Telemetri Tambak Indonesia (MapPanel.tsx)</text>
+    <text x="560" y="24" font-family="monospace" font-size="10" fill="#A8D5BA" text-anchor="end">Leaflet / OpenStreetMap GPS Active</text>
+
+    <!-- Stylized Indonesia Map Vector Silhouette -->
+    <rect x="15" y="48" width="550" height="320" rx="8" fill="url(#mapGlow)" stroke="#594466" stroke-width="0.8"/>
+    
+    <!-- Grid lines on map -->
+    <line x1="15" y1="120" x2="565" y2="120" stroke="#594466" stroke-dasharray="2 4" stroke-opacity="0.4"/>
+    <line x1="15" y1="200" x2="565" y2="200" stroke="#594466" stroke-dasharray="2 4" stroke-opacity="0.4"/>
+    <line x1="15" y1="280" x2="565" y2="280" stroke="#594466" stroke-dasharray="2 4" stroke-opacity="0.4"/>
+
+    <!-- Sumatra -->
+    <path d="M45,110 L95,150 L140,210 L125,230 L80,180 L40,130 Z" fill="#382747" stroke="#C4A1FF" stroke-width="1"/>
+    <!-- Java -->
+    <path d="M145,260 L240,265 L310,270 L300,285 L200,282 L140,275 Z" fill="#382747" stroke="#C4A1FF" stroke-width="1"/>
+    <!-- Kalimantan -->
+    <path d="M190,130 L250,120 L270,180 L220,210 L180,180 Z" fill="#382747" stroke="#C4A1FF" stroke-width="1"/>
+    <!-- Sulawesi -->
+    <path d="M295,150 L310,130 L320,170 L345,175 L330,220 L310,200 L295,180 Z" fill="#382747" stroke="#C4A1FF" stroke-width="1"/>
+    <!-- Papua -->
+    <path d="M430,170 L480,170 L530,210 L520,250 L450,240 L420,195 Z" fill="#382747" stroke="#C4A1FF" stroke-width="1"/>
+
+    <!-- Telemetry Pins on Ponds (from database coordinates) -->
+    <!-- Sidoarjo / East Java Cluster (Primary) -->
+    <circle cx="260" cy="270" r="12" fill="#A8D5BA" fill-opacity="0.25"/>
+    <circle cx="260" cy="270" r="5" fill="#A8D5BA"/>
+    <text x="260" y="295" font-family="system-ui, sans-serif" font-size="9" font-weight="700" fill="#FAF5FF" text-anchor="middle">Sidoarjo HQ (84 unit)</text>
+
+    <!-- Lampung -->
+    <circle cx="120" cy="225" r="4" fill="#38BDF8"/>
+    <text x="120" y="240" font-family="system-ui, sans-serif" font-size="8" fill="#38BDF8" text-anchor="middle">Lampung</text>
+
+    <!-- Situbondo -->
+    <circle cx="285" cy="272" r="4" fill="#C4A1FF"/>
+    <text x="285" y="260" font-family="system-ui, sans-serif" font-size="8" fill="#C4A1FF" text-anchor="middle">Situbondo</text>
+
+    <!-- Banyuwangi -->
+    <circle cx="305" cy="275" r="4" fill="#A8D5BA"/>
+    
+    <!-- Takalar (Sulawesi) -->
+    <circle cx="315" cy="215" r="4" fill="#E6A8C7"/>
+    <text x="345" y="215" font-family="system-ui, sans-serif" font-size="8" fill="#E6A8C7">Takalar</text>
+  </g>
+
+  <!-- Right: Live Sensor & Actuator Telemetry (from SensorRangesPanel.tsx) -->
+  <g transform="translate(620, 190)">
+    <rect width="315" height="385" rx="12" fill="#241B30" stroke="#594466" stroke-width="1"/>
+    <text x="18" y="28" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#FAF5FF">Telemetri Sensor WQMS (SensorRangesPanel)</text>
+
+    <!-- Sensor 1: DO -->
+    <g transform="translate(15, 45)">
+      <rect width="285" height="52" rx="8" fill="#1D1626" stroke="#594466" stroke-width="0.8"/>
+      <text x="14" y="22" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#FAF5FF">Dissolved Oxygen (DO)</text>
+      <text x="14" y="38" font-family="system-ui, sans-serif" font-size="10" fill="#A99AB8">Batas Aman: ≥ 5.0 mg/L</text>
+      <text x="270" y="32" font-family="monospace" font-size="16" font-weight="900" fill="#A8D5BA" text-anchor="end">6.84 mg/L</text>
+    </g>
+
+    <!-- Sensor 2: pH Air -->
+    <g transform="translate(15, 105)">
+      <rect width="285" height="52" rx="8" fill="#1D1626" stroke="#594466" stroke-width="0.8"/>
+      <text x="14" y="22" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#FAF5FF">Derajat Keasaman (pH)</text>
+      <text x="14" y="38" font-family="system-ui, sans-serif" font-size="10" fill="#A99AB8">Batas Aman: 7.5 — 8.5</text>
+      <text x="270" y="32" font-family="monospace" font-size="16" font-weight="900" fill="#C4A1FF" text-anchor="end">7.82 pH</text>
+    </g>
+
+    <!-- Sensor 3: Suhu Air -->
+    <g transform="translate(15, 165)">
+      <rect width="285" height="52" rx="8" fill="#1D1626" stroke="#594466" stroke-width="0.8"/>
+      <text x="14" y="22" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#FAF5FF">Suhu Air Tambak</text>
+      <text x="14" y="38" font-family="system-ui, sans-serif" font-size="10" fill="#A99AB8">Optimal: 28 — 31 °C</text>
+      <text x="270" y="32" font-family="monospace" font-size="16" font-weight="900" fill="#38BDF8" text-anchor="end">28.5 °C</text>
+    </g>
+
+    <!-- Sensor 4: Salinitas -->
+    <g transform="translate(15, 225)">
+      <rect width="285" height="52" rx="8" fill="#1D1626" stroke="#594466" stroke-width="0.8"/>
+      <text x="14" y="22" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#FAF5FF">Salinitas Tambak</text>
+      <text x="14" y="38" font-family="system-ui, sans-serif" font-size="10" fill="#A99AB8">Optimal: 15 — 25 ppt</text>
+      <text x="270" y="32" font-family="monospace" font-size="16" font-weight="900" fill="#FAF5FF" text-anchor="end">18 ppt</text>
+    </g>
+
+    <!-- Sensor 5: ORP -->
+    <g transform="translate(15, 285)">
+      <rect width="285" height="52" rx="8" fill="#1D1626" stroke="#594466" stroke-width="0.8"/>
+      <text x="14" y="22" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#FAF5FF">Oksidasi Reduksi (ORP)</text>
+      <text x="14" y="38" font-family="system-ui, sans-serif" font-size="10" fill="#A99AB8">Redox Potential</text>
+      <text x="270" y="32" font-family="monospace" font-size="16" font-weight="900" fill="#E6A8C7" text-anchor="end">+245 mV</text>
+    </g>
+
+    <rect x="15" y="345" width="285" height="26" rx="6" fill="#382747"/>
+    <text x="157" y="362" font-family="system-ui, sans-serif" font-size="10" font-weight="600" fill="#C4A1FF" text-anchor="middle">Ekspor Data Laporan (Excel &amp; CSV)</text>
+  </g>
+</svg>

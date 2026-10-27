@@ -1,0 +1,148 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="600" viewBox="0 0 960 600" fill="none">
+  <defs>
+    <linearGradient id="attDarkBg" x1="0" y1="0" x2="960" y2="600" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#191322" />
+      <stop offset="100%" stop-color="#110B18" />
+    </linearGradient>
+  </defs>
+
+  <rect width="960" height="600" rx="16" fill="url(#attDarkBg)"/>
+  <rect width="960" height="600" rx="16" stroke="#594466" stroke-width="1.5"/>
+
+  <!-- macOS Window Bar -->
+  <rect width="960" height="42" fill="#241B30" rx="16"/>
+  <rect y="30" width="960" height="12" fill="#241B30"/>
+  <line x1="0" y1="42" x2="960" y2="42" stroke="#594466" stroke-width="1"/>
+  <circle cx="28" cy="21" r="5" fill="#EF4444" opacity="0.85"/>
+  <circle cx="44" cy="21" r="5" fill="#F59E0B" opacity="0.85"/>
+  <circle cx="60" cy="21" r="5" fill="#10B981" opacity="0.85"/>
+  <text x="480" y="26" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#A99AB8" text-anchor="middle">Venambak HRIS &amp; Attendance Management System (app-absensi frontend &amp; mobile-app)</text>
+
+  <!-- Left: GPS Radius & Webcam Face Recognition Check-in -->
+  <g transform="translate(25, 60)">
+    <rect width="360" height="515" rx="14" fill="#241B30" stroke="#594466" stroke-width="1"/>
+    <text x="20" y="32" font-family="system-ui, sans-serif" font-size="13" font-weight="700" fill="#FAF5FF">Presensi Masuk (GPS &amp; Face ID)</text>
+    <text x="20" y="50" font-family="system-ui, sans-serif" font-size="11" fill="#A99AB8">Radius Maksimum Kantor: 50 Meter</text>
+
+    <!-- Camera Viewport Box -->
+    <rect x="20" y="65" width="320" height="210" rx="10" fill="#140F1D" stroke="#594466" stroke-width="1"/>
+    
+    <!-- User Face Outline -->
+    <ellipse cx="180" cy="165" rx="55" ry="70" fill="#382747" stroke="#A8D5BA" stroke-width="2"/>
+    <rect x="145" y="110" width="70" height="18" rx="4" fill="#A8D5BA" fill-opacity="0.2"/>
+    <text x="180" y="123" font-family="system-ui, sans-serif" font-size="9" font-weight="700" fill="#A8D5BA" text-anchor="middle">Wajah Terdeteksi (99%)</text>
+
+    <!-- Scan Line -->
+    <line x1="80" y1="165" x2="280" y2="165" stroke="#A8D5BA" stroke-width="1.5" stroke-dasharray="4 2"/>
+
+    <!-- GPS Coordinate Badge -->
+    <rect x="20" y="290" width="320" height="42" rx="8" fill="#1D1626" stroke="#594466" stroke-width="0.8"/>
+    <circle cx="38" cy="311" r="5" fill="#A8D5BA"/>
+    <text x="52" y="307" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#FAF5FF">Geolokasi Valid (Kantor Sidoarjo)</text>
+    <text x="52" y="322" font-family="monospace" font-size="9" fill="#A99AB8">Jarak ke Kantor: 12 meter (Di dalam radius)</text>
+
+    <!-- Big Check-In CTA Button -->
+    <rect x="20" y="345" width="320" height="48" rx="10" fill="#C4A1FF"/>
+    <text x="180" y="375" font-family="system-ui, sans-serif" font-size="13" font-weight="900" fill="#21152F" text-anchor="middle">SUBMIT PRESENSI SEKARANG</text>
+
+    <!-- Daily Log Snapshot -->
+    <g transform="translate(20, 410)">
+      <rect width="320" height="85" rx="8" fill="#1D1626" stroke="#594466" stroke-width="0.8"/>
+      <text x="14" y="24" font-family="system-ui, sans-serif" font-size="10" fill="#A99AB8">LOG PRESENSI HARI INI</text>
+      <text x="14" y="48" font-family="monospace" font-size="12" font-weight="700" fill="#A8D5BA">JAM MASUK : 07:48:12 WIB</text>
+      <text x="14" y="68" font-family="monospace" font-size="12" fill="#75697D">JAM PULANG: --:--:-- WIB (Belum checkout)</text>
+    </g>
+  </g>
+
+  <!-- Right: Admin HRIS Table & Role Management (from pages/Users & Dashboard) -->
+  <g transform="translate(410, 60)">
+    <!-- Top Stat Row -->
+    <rect width="165" height="70" rx="10" fill="#241B30" stroke="#594466" stroke-width="1"/>
+    <text x="16" y="24" font-family="system-ui, sans-serif" font-size="10" fill="#A99AB8">TOTAL KARYAWAN</text>
+    <text x="16" y="54" font-family="system-ui, sans-serif" font-size="22" font-weight="900" fill="#FAF5FF">142</text>
+
+    <rect x="180" width="165" height="70" rx="10" fill="#241B30" stroke="#594466" stroke-width="1"/>
+    <text x="196" y="24" font-family="system-ui, sans-serif" font-size="10" fill="#A99AB8">HADIR HARI INI</text>
+    <text x="196" y="54" font-family="system-ui, sans-serif" font-size="22" font-weight="900" fill="#A8D5BA">138 (97%)</text>
+
+    <rect x="360" width="165" height="70" rx="10" fill="#241B30" stroke="#594466" stroke-width="1"/>
+    <text x="376" y="24" font-family="system-ui, sans-serif" font-size="10" fill="#A99AB8">CUTI &amp; IZIN</text>
+    <text x="376" y="54" font-family="system-ui, sans-serif" font-size="22" font-weight="900" fill="#E6A8C7">4 Orang</text>
+
+    <!-- Main Table Container -->
+    <g transform="translate(0, 85)">
+      <rect width="525" height="430" rx="12" fill="#241B30" stroke="#594466" stroke-width="1"/>
+      <rect width="525" height="38" rx="12" fill="#30223D"/>
+      <rect y="26" width="525" height="12" fill="#30223D"/>
+      
+      <text x="20" y="24" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#D4C9E2">KARYAWAN</text>
+      <text x="180" y="24" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#D4C9E2">DIVISI</text>
+      <text x="300" y="24" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#D4C9E2">WAKTU</text>
+      <text x="410" y="24" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#D4C9E2">STATUS</text>
+
+      <!-- Row 1 -->
+      <line x1="0" y1="38" x2="525" y2="38" stroke="#594466" stroke-width="1"/>
+      <circle cx="34" cy="62" r="11" fill="#382747"/>
+      <text x="34" y="66" font-family="system-ui, sans-serif" font-size="9" font-weight="700" fill="#C4A1FF" text-anchor="middle">AW</text>
+      <text x="54" y="66" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#FAF5FF">Aishka Wibowo</text>
+      <text x="180" y="66" font-family="system-ui, sans-serif" font-size="11" fill="#A99AB8">Frontend &amp; Sysadmin</text>
+      <text x="300" y="66" font-family="monospace" font-size="11" fill="#FAF5FF">07:48:12</text>
+      <rect x="405" y="54" width="60" height="20" rx="6" fill="#A8D5BA" fill-opacity="0.2"/>
+      <text x="435" y="68" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#A8D5BA" text-anchor="middle">Ontime</text>
+
+      <!-- Row 2 -->
+      <line x1="0" y1="88" x2="525" y2="88" stroke="#594466" stroke-width="0.7"/>
+      <circle cx="34" cy="112" r="11" fill="#382747"/>
+      <text x="34" y="116" font-family="system-ui, sans-serif" font-size="9" font-weight="700" fill="#E6A8C7" text-anchor="middle">BP</text>
+      <text x="54" y="116" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#FAF5FF">Budi Pratama</text>
+      <text x="180" y="116" font-family="system-ui, sans-serif" font-size="11" fill="#A99AB8">IoT Aquaculture</text>
+      <text x="300" y="116" font-family="monospace" font-size="11" fill="#FAF5FF">07:55:04</text>
+      <rect x="405" y="104" width="60" height="20" rx="6" fill="#A8D5BA" fill-opacity="0.2"/>
+      <text x="435" y="118" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#A8D5BA" text-anchor="middle">Ontime</text>
+
+      <!-- Row 3 -->
+      <line x1="0" y1="138" x2="525" y2="138" stroke="#594466" stroke-width="0.7"/>
+      <circle cx="34" cy="162" r="11" fill="#382747"/>
+      <text x="34" y="166" font-family="system-ui, sans-serif" font-size="9" font-weight="700" fill="#38BDF8" text-anchor="middle">DS</text>
+      <text x="54" y="166" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#FAF5FF">Dewi Sartika</text>
+      <text x="180" y="166" font-family="system-ui, sans-serif" font-size="11" fill="#A99AB8">Finance &amp; Admin</text>
+      <text x="300" y="166" font-family="monospace" font-size="11" fill="#FAF5FF">08:02:18</text>
+      <rect x="405" y="154" width="60" height="20" rx="6" fill="#F59E0B" fill-opacity="0.2"/>
+      <text x="435" y="168" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#F59E0B" text-anchor="middle">Late 2m</text>
+
+      <!-- Row 4 -->
+      <line x1="0" y1="188" x2="525" y2="188" stroke="#594466" stroke-width="0.7"/>
+      <circle cx="34" cy="212" r="11" fill="#382747"/>
+      <text x="34" y="216" font-family="system-ui, sans-serif" font-size="9" font-weight="700" fill="#A8D5BA" text-anchor="middle">RA</text>
+      <text x="54" y="216" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#FAF5FF">Reza Aditya</text>
+      <text x="180" y="216" font-family="system-ui, sans-serif" font-size="11" fill="#A99AB8">Field Operations</text>
+      <text x="300" y="216" font-family="monospace" font-size="11" fill="#A99AB8">--:--:--</text>
+      <rect x="405" y="204" width="60" height="20" rx="6" fill="#E6A8C7" fill-opacity="0.2"/>
+      <text x="435" y="218" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#E6A8C7" text-anchor="middle">Izin Sakit</text>
+
+      <!-- Bottom Task Management Box (from pages/Tasks) -->
+      <g transform="translate(15, 260)">
+        <rect width="495" height="150" rx="10" fill="#1D1626" stroke="#594466" stroke-width="0.8"/>
+        <text x="16" y="25" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#FAF5FF">Task Management &amp; Work Order (pages/Tasks)</text>
+        
+        <rect x="16" y="40" width="145" height="95" rx="6" fill="#241B30" stroke="#594466" stroke-width="0.7"/>
+        <text x="24" y="58" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#C4A1FF">Kalibrasi WQMS #03</text>
+        <text x="24" y="74" font-family="system-ui, sans-serif" font-size="9" fill="#A99AB8">Due: Hari ini • Blok A</text>
+        <rect x="24" y="105" width="45" height="16" rx="4" fill="#A8D5BA" fill-opacity="0.2"/>
+        <text x="46" y="117" font-family="system-ui, sans-serif" font-size="8" font-weight="700" fill="#A8D5BA" text-anchor="middle">Done</text>
+
+        <rect x="175" y="40" width="145" height="95" rx="6" fill="#241B30" stroke="#594466" stroke-width="0.7"/>
+        <text x="183" y="58" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#38BDF8">Update Firmware AutoVe</text>
+        <text x="183" y="74" font-family="system-ui, sans-serif" font-size="9" fill="#A99AB8">Due: Besok • OTA v2.4</text>
+        <rect x="183" y="105" width="55" height="16" rx="4" fill="#38BDF8" fill-opacity="0.2"/>
+        <text x="210" y="117" font-family="system-ui, sans-serif" font-size="8" font-weight="700" fill="#38BDF8" text-anchor="middle">In Progress</text>
+
+        <rect x="334" y="40" width="145" height="95" rx="6" fill="#241B30" stroke="#594466" stroke-width="0.7"/>
+        <text x="342" y="58" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#FAF5FF">Pembersihan Hopper B2</text>
+        <text x="342" y="74" font-family="system-ui, sans-serif" font-size="9" fill="#A99AB8">Due: 28 Okt • Feeder</text>
+        <rect x="342" y="105" width="48" height="16" rx="4" fill="#75697D" fill-opacity="0.2"/>
+        <text x="366" y="117" font-family="system-ui, sans-serif" font-size="8" font-weight="700" fill="#A99AB8" text-anchor="middle">To Do</text>
+      </g>
+    </g>
+  </g>
+</svg>

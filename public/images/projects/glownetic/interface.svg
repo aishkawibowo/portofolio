@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="560" viewBox="0 0 900 560" fill="none">
+  <defs>
+    <linearGradient id="glowBg" x1="0" y1="0" x2="900" y2="560" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1A1224" />
+      <stop offset="100%" stop-color="#110A18" />
+    </linearGradient>
+  </defs>
+
+  <rect width="900" height="560" rx="16" fill="url(#glowBg)"/>
+  <rect width="900" height="560" rx="16" stroke="#594466" stroke-width="1.5"/>
+
+  <!-- Window Bar -->
+  <rect width="900" height="42" fill="#241B30" rx="16"/>
+  <rect y="30" width="900" height="12" fill="#241B30"/>
+  <line x1="0" y1="42" x2="900" y2="42" stroke="#594466" stroke-width="1"/>
+  <circle cx="28" cy="21" r="5" fill="#EF4444" opacity="0.85"/>
+  <circle cx="44" cy="21" r="5" fill="#F59E0B" opacity="0.85"/>
+  <circle cx="60" cy="21" r="5" fill="#10B981" opacity="0.85"/>
+  <text x="450" y="26" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#A99AB8" text-anchor="middle">GlowNetic — AI Melanin &amp; Facial Skin Analysis Platform (CNN &amp; PostgreSQL)</text>
+
+  <!-- Left: Facial Analysis Viewport -->
+  <g transform="translate(35, 65)">
+    <rect width="450" height="455" rx="14" fill="#241B30" stroke="#594466" stroke-width="1"/>
+    <text x="24" y="32" font-family="system-ui, sans-serif" font-size="13" font-weight="700" fill="#FAF5FF">Pemindaian Zona Wajah &amp; Klasifikasi Melanin</text>
+    
+    <!-- Face Outline Mockup -->
+    <ellipse cx="225" cy="235" rx="125" ry="165" fill="#1D1626" stroke="#594466" stroke-width="1.5"/>
+    
+    <!-- Facial Mesh Zones -->
+    <!-- Forehead (T-Zone) -->
+    <rect x="155" y="115" width="140" height="45" rx="8" fill="#C4A1FF" fill-opacity="0.15" stroke="#C4A1FF" stroke-width="1"/>
+    <text x="225" y="142" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#C4A1FF" text-anchor="middle">T-ZONE: OIL 68%</text>
+
+    <!-- Cheeks (L & R) -->
+    <rect x="120" y="205" width="60" height="70" rx="8" fill="#E6A8C7" fill-opacity="0.15" stroke="#E6A8C7" stroke-width="1"/>
+    <text x="150" y="245" font-family="system-ui, sans-serif" font-size="9" font-weight="700" fill="#E6A8C7" text-anchor="middle">PIGMEN</text>
+
+    <rect x="270" y="205" width="60" height="70" rx="8" fill="#E6A8C7" fill-opacity="0.15" stroke="#E6A8C7" stroke-width="1"/>
+    <text x="300" y="245" font-family="system-ui, sans-serif" font-size="9" font-weight="700" fill="#E6A8C7" text-anchor="middle">NORMAL</text>
+
+    <!-- Chin (U-Zone) -->
+    <rect x="180" y="315" width="90" height="40" rx="8" fill="#38BDF8" fill-opacity="0.15" stroke="#38BDF8" stroke-width="1"/>
+    <text x="225" y="340" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#38BDF8" text-anchor="middle">ACNE ZONE</text>
+
+    <!-- Scanning grid animation line -->
+    <line x1="100" y1="235" x2="350" y2="235" stroke="#C4A1FF" stroke-width="2" stroke-dasharray="6 4"/>
+
+    <!-- Bottom metadata -->
+    <rect x="25" y="415" width="400" height="26" rx="6" fill="#1D1626"/>
+    <text x="35" y="432" font-family="monospace" font-size="10" fill="#A8D5BA">● CNN InceptionV3 Model Loaded • Input: 512x512 RGB</text>
+  </g>
+
+  <!-- Right: Diagnosis & Prediction Metrics -->
+  <g transform="translate(510, 65)">
+    <rect width="355" height="455" rx="14" fill="#241B30" stroke="#594466" stroke-width="1"/>
+    <text x="24" y="32" font-family="system-ui, sans-serif" font-size="13" font-weight="700" fill="#FAF5FF">Hasil Diagnosis AI (Deep Learning)</text>
+
+    <!-- Skin Type Result Card -->
+    <g transform="translate(20, 50)">
+      <rect width="315" height="75" rx="10" fill="#1D1626" stroke="#594466" stroke-width="0.8"/>
+      <text x="18" y="26" font-family="system-ui, sans-serif" font-size="10" fill="#A99AB8">HASIL TIPE KULIT DOMINAN</text>
+      <text x="18" y="55" font-family="system-ui, sans-serif" font-size="20" font-weight="900" fill="#C4A1FF">Kombinasi Berminyak</text>
+      <rect x="220" y="24" width="80" height="22" rx="11" fill="#C4A1FF" fill-opacity="0.2"/>
+      <text x="260" y="39" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#C4A1FF" text-anchor="middle">Conf: 94.6%</text>
+    </g>
+
+    <!-- Diagnostic Progress Bars -->
+    <g transform="translate(20, 140)">
+      <text x="0" y="15" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#FAF5FF">Indeks Melanin (Pigmentasi)</text>
+      <text x="315" y="15" font-family="monospace" font-size="11" fill="#C4A1FF" text-anchor="end">72 / 100</text>
+      <rect y="25" width="315" height="8" rx="4" fill="#1D1626"/>
+      <rect y="25" width="226" height="8" rx="4" fill="#C4A1FF"/>
+
+      <text x="0" y="55" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#FAF5FF">Kadar Sebum (Minyak T-Zone)</text>
+      <text x="315" y="55" font-family="monospace" font-size="11" fill="#38BDF8" text-anchor="end">68% (Tinggi)</text>
+      <rect y="65" width="315" height="8" rx="4" fill="#1D1626"/>
+      <rect y="65" width="214" height="8" rx="4" fill="#38BDF8"/>
+
+      <text x="0" y="95" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#FAF5FF">Tingkat Kerentanan Jerawat (Acne)</text>
+      <text x="315" y="95" font-family="monospace" font-size="11" fill="#E6A8C7" text-anchor="end">Sedang (Grade 2)</text>
+      <rect y="105" width="315" height="8" rx="4" fill="#1D1626"/>
+      <rect y="105" width="145" height="8" rx="4" fill="#E6A8C7"/>
+
+      <text x="0" y="135" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#FAF5FF">Hidrasi Kulit (Moisture)</text>
+      <text x="315" y="135" font-family="monospace" font-size="11" fill="#A8D5BA" text-anchor="end">Normal (54%)</text>
+      <rect y="145" width="315" height="8" rx="4" fill="#1D1626"/>
+      <rect y="145" width="170" height="8" rx="4" fill="#A8D5BA"/>
+    </g>
+
+    <!-- Recommendation Box -->
+    <g transform="translate(20, 310)">
+      <rect width="315" height="120" rx="10" fill="#1D1626" stroke="#594466" stroke-width="0.8"/>
+      <text x="16" y="24" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#FAF5FF">Rekomendasi Skincare Berbasis Kandungan</text>
+      <text x="16" y="46" font-family="system-ui, sans-serif" font-size="10" fill="#D4C9E2">• Niacinamide 5% (Mereduksi melanin &amp; kontrol sebum)</text>
+      <text x="16" y="66" font-family="system-ui, sans-serif" font-size="10" fill="#D4C9E2">• Salicylic Acid (BHA 1-2%) untuk eksfoliasi pori</text>
+      <text x="16" y="86" font-family="system-ui, sans-serif" font-size="10" fill="#D4C9E2">• Ceramide Gel Moisturizer ringan non-komedogenik</text>
+      <text x="16" y="106" font-family="system-ui, sans-serif" font-size="9" fill="#A99AB8">Tersimpan di PostgreSQL • Endpoint: /api/v1/diagnosis/user_491</text>
+    </g>
+  </g>
+</svg>

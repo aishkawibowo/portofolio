@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="560" viewBox="0 0 900 560" fill="none">
+  <defs>
+    <linearGradient id="turnBg" x1="0" y1="0" x2="900" y2="560" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1A1325" />
+      <stop offset="100%" stop-color="#110B19" />
+    </linearGradient>
+  </defs>
+
+  <rect width="900" height="560" rx="16" fill="url(#turnBg)"/>
+  <rect width="900" height="560" rx="16" stroke="#594466" stroke-width="1.5"/>
+
+  <!-- Window Bar -->
+  <rect width="900" height="42" fill="#241B30" rx="16"/>
+  <rect y="30" width="900" height="12" fill="#241B30"/>
+  <line x1="0" y1="42" x2="900" y2="42" stroke="#594466" stroke-width="1"/>
+  <circle cx="28" cy="21" r="5" fill="#EF4444" opacity="0.85"/>
+  <circle cx="44" cy="21" r="5" fill="#F59E0B" opacity="0.85"/>
+  <circle cx="60" cy="21" r="5" fill="#10B981" opacity="0.85"/>
+  <text x="450" y="26" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#A99AB8" text-anchor="middle">HR Turnover Prediction &amp; Feature Importance — XGBoost Classifier (Scikit-Learn)</text>
+
+  <!-- Top Metrics -->
+  <g transform="translate(30, 60)">
+    <rect width="265" height="75" rx="10" fill="#241B30" stroke="#594466" stroke-width="1"/>
+    <text x="18" y="24" font-family="system-ui, sans-serif" font-size="10" fill="#A99AB8">MODEL ROC-AUC SCORE</text>
+    <text x="18" y="56" font-family="system-ui, sans-serif" font-size="24" font-weight="900" fill="#A8D5BA">0.924</text>
+    <rect x="185" y="28" width="65" height="20" rx="10" fill="#A8D5BA" fill-opacity="0.2"/>
+    <text x="217" y="42" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#A8D5BA" text-anchor="middle">Excellent</text>
+
+    <rect x="285" width="270" height="75" rx="10" fill="#241B30" stroke="#594466" stroke-width="1"/>
+    <text x="303" y="24" font-family="system-ui, sans-serif" font-size="10" fill="#A99AB8">F1-SCORE (ATTRITION RISK)</text>
+    <text x="303" y="56" font-family="system-ui, sans-serif" font-size="24" font-weight="900" fill="#C4A1FF">0.887</text>
+    <rect x="470" y="28" width="70" height="20" rx="10" fill="#C4A1FF" fill-opacity="0.2"/>
+    <text x="505" y="42" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#C4A1FF" text-anchor="middle">Balanced</text>
+
+    <rect x="575" width="265" height="75" rx="10" fill="#241B30" stroke="#594466" stroke-width="1"/>
+    <text x="593" y="24" font-family="system-ui, sans-serif" font-size="10" fill="#A99AB8">KARYAWAN BERISIKO TINGGI</text>
+    <text x="593" y="56" font-family="system-ui, sans-serif" font-size="24" font-weight="900" fill="#E6A8C7">18 Orang</text>
+    <rect x="760" y="28" width="65" height="20" rx="10" fill="#E6A8C7" fill-opacity="0.2"/>
+    <text x="792" y="42" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#E6A8C7" text-anchor="middle">Alert HR</text>
+  </g>
+
+  <!-- Left: Feature Importance Ranking (SHAP style) -->
+  <g transform="translate(30, 150)">
+    <rect width="470" height="375" rx="12" fill="#241B30" stroke="#594466" stroke-width="1"/>
+    <text x="24" y="32" font-family="system-ui, sans-serif" font-size="13" font-weight="700" fill="#FAF5FF">XGBoost Feature Importance (Faktor Utama Turnover)</text>
+
+    <!-- Bar 1: OverTime -->
+    <g transform="translate(24, 60)">
+      <text x="0" y="14" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#FAF5FF">Jam Lembur Berlebih (OverTime)</text>
+      <text x="420" y="14" font-family="monospace" font-size="11" fill="#E6A8C7" text-anchor="end">0.324 (32.4%)</text>
+      <rect y="22" width="420" height="14" rx="4" fill="#1D1626"/>
+      <rect y="22" width="310" height="14" rx="4" fill="#E6A8C7"/>
+    </g>
+
+    <!-- Bar 2: MonthlyIncome -->
+    <g transform="translate(24, 115)">
+      <text x="0" y="14" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#FAF5FF">Rasio Kompensasi Gaji (MonthlyIncome)</text>
+      <text x="420" y="14" font-family="monospace" font-size="11" fill="#C4A1FF" text-anchor="end">0.248 (24.8%)</text>
+      <rect y="22" width="420" height="14" rx="4" fill="#1D1626"/>
+      <rect y="22" width="240" height="14" rx="4" fill="#C4A1FF"/>
+    </g>
+
+    <!-- Bar 3: YearsAtCompany -->
+    <g transform="translate(24, 170)">
+      <text x="0" y="14" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#FAF5FF">Masa Kerja di Perusahaan (YearsAtCompany)</text>
+      <text x="420" y="14" font-family="monospace" font-size="11" fill="#38BDF8" text-anchor="end">0.182 (18.2%)</text>
+      <rect y="22" width="420" height="14" rx="4" fill="#1D1626"/>
+      <rect y="22" width="175" height="14" rx="4" fill="#38BDF8"/>
+    </g>
+
+    <!-- Bar 4: WorkLifeBalance -->
+    <g transform="translate(24, 225)">
+      <text x="0" y="14" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#FAF5FF">Work-Life Balance Score</text>
+      <text x="420" y="14" font-family="monospace" font-size="11" fill="#A8D5BA" text-anchor="end">0.142 (14.2%)</text>
+      <rect y="22" width="420" height="14" rx="4" fill="#1D1626"/>
+      <rect y="22" width="135" height="14" rx="4" fill="#A8D5BA"/>
+    </g>
+
+    <!-- Bar 5: DistanceFromHome -->
+    <g transform="translate(24, 280)">
+      <text x="0" y="14" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#FAF5FF">Jarak Domisili ke Kantor (DistanceFromHome)</text>
+      <text x="420" y="14" font-family="monospace" font-size="11" fill="#FAF5FF" text-anchor="end">0.104 (10.4%)</text>
+      <rect y="22" width="420" height="14" rx="4" fill="#1D1626"/>
+      <rect y="22" width="100" height="14" rx="4" fill="#75697D"/>
+    </g>
+  </g>
+
+  <!-- Right: ROC Curve & Confusion Matrix -->
+  <g transform="translate(520, 150)">
+    <rect width="350" height="375" rx="12" fill="#241B30" stroke="#594466" stroke-width="1"/>
+    <text x="24" y="32" font-family="system-ui, sans-serif" font-size="13" font-weight="700" fill="#FAF5FF">Kurva ROC &amp; Confusion Matrix</text>
+
+    <!-- ROC Curve Area -->
+    <g transform="translate(35, 55)">
+      <line x1="0" y1="180" x2="260" y2="180" stroke="#594466" stroke-width="1"/>
+      <line x1="0" y1="0" x2="0" y2="180" stroke="#594466" stroke-width="1"/>
+      <line x1="0" y1="180" x2="260" y2="0" stroke="#594466" stroke-dasharray="3 3" opacity="0.4"/>
+
+      <!-- Curve -->
+      <path d="M0,180 Q15,40 100,20 T260,0" stroke="#C4A1FF" stroke-width="2.5" fill="none"/>
+
+      <text x="130" y="200" font-family="monospace" font-size="9" fill="#75697D" text-anchor="middle">False Positive Rate (1 - Specificity)</text>
+      <text x="-90" y="-12" font-family="monospace" font-size="9" fill="#75697D" transform="rotate(-90)">True Positive Rate</text>
+      
+      <text x="180" y="120" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#A8D5BA">AUC = 0.924</text>
+    </g>
+
+    <!-- Confusion Matrix 2x2 -->
+    <g transform="translate(35, 275)">
+      <text x="0" y="0" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#FAF5FF">Confusion Matrix (Test Set: 294 Karyawan)</text>
+
+      <rect x="0" y="15" width="135" height="40" rx="6" fill="#1D1626" stroke="#594466" stroke-width="0.8"/>
+      <text x="67" y="32" font-family="monospace" font-size="10" fill="#A8D5BA" text-anchor="middle">True Neg: 238</text>
+      <text x="67" y="47" font-family="system-ui, sans-serif" font-size="9" fill="#A99AB8" text-anchor="middle">Tetap Bekerja</text>
+
+      <rect x="145" y="15" width="135" height="40" rx="6" fill="#1D1626" stroke="#594466" stroke-width="0.8"/>
+      <text x="212" y="32" font-family="monospace" font-size="10" fill="#E6A8C7" text-anchor="middle">False Pos: 12</text>
+      <text x="212" y="47" font-family="system-ui, sans-serif" font-size="9" fill="#A99AB8" text-anchor="middle">False Alarm</text>
+    </g>
+  </g>
+</svg>

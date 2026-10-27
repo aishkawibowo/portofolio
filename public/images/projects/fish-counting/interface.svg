@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="600" viewBox="0 0 960 600" fill="none">
+  <defs>
+    <linearGradient id="fishDarkBg" x1="0" y1="0" x2="960" y2="600" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1E1E2E" />
+      <stop offset="100%" stop-color="#181825" />
+    </linearGradient>
+  </defs>
+
+  <rect width="960" height="600" rx="16" fill="url(#fishDarkBg)"/>
+  <rect width="960" height="600" rx="16" stroke="#594466" stroke-width="1.5"/>
+
+  <!-- Window Bar -->
+  <rect width="960" height="42" fill="#241B30" rx="16"/>
+  <rect y="30" width="960" height="12" fill="#241B30"/>
+  <line x1="0" y1="42" x2="960" y2="42" stroke="#594466" stroke-width="1"/>
+  <circle cx="28" cy="21" r="5" fill="#EF4444" opacity="0.85"/>
+  <circle cx="44" cy="21" r="5" fill="#F59E0B" opacity="0.85"/>
+  <circle cx="60" cy="21" r="5" fill="#10B981" opacity="0.85"/>
+  <text x="480" y="26" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#CDD6F4" text-anchor="middle">Counting Benur &amp; Ikan AI Touch Launcher — Raspberry Pi 5 &amp; Hailo-8 NPU (main_ui.py)</text>
+
+  <!-- Top Touch Launcher Mode Selector (from main_ui.py) -->
+  <g transform="translate(30, 56)">
+    <!-- Mode 1: Deteksi Ikan -->
+    <rect width="280" height="52" rx="10" fill="#CBA6F7"/>
+    <text x="30" y="32" font-family="system-ui, sans-serif" font-size="16" fill="#1E1E2E">🐟</text>
+    <text x="60" y="32" font-family="system-ui, sans-serif" font-size="13" font-weight="900" fill="#1E1E2E">DETEKSI IKAN (ACTIVE)</text>
+
+    <!-- Mode 2: Deteksi Udang (Benur) -->
+    <rect x="300" width="280" height="52" rx="10" fill="#313244" stroke="#45475A" stroke-width="1"/>
+    <text x="330" y="32" font-family="system-ui, sans-serif" font-size="16">🦐</text>
+    <text x="360" y="32" font-family="system-ui, sans-serif" font-size="13" font-weight="700" fill="#CDD6F4">DETEKSI UDANG BENUR</text>
+
+    <!-- Mode 3: PiCamera App (Grid Cawan Petri) -->
+    <rect x="600" width="300" height="52" rx="10" fill="#313244" stroke="#45475A" stroke-width="1"/>
+    <text x="625" y="32" font-family="system-ui, sans-serif" font-size="16">📷</text>
+    <text x="655" y="32" font-family="system-ui, sans-serif" font-size="13" font-weight="700" fill="#CDD6F4">PICAMERA CAWAN PETRI</text>
+  </g>
+
+  <!-- Real-Time Inference Viewport (Petri Dish / Chute Camera Feed) -->
+  <g transform="translate(30, 125)">
+    <rect width="600" height="445" rx="12" fill="#11111B" stroke="#45475A" stroke-width="1.5"/>
+    
+    <!-- Cawan Petri Grid Circular Overlay -->
+    <circle cx="300" cy="222" r="185" fill="#181825" stroke="#313244" stroke-width="2"/>
+    <circle cx="300" cy="222" r="120" stroke="#313244" stroke-dasharray="3 4" stroke-width="1" fill="none"/>
+    <circle cx="300" cy="222" r="60" stroke="#313244" stroke-dasharray="3 4" stroke-width="1" fill="none"/>
+    <line x1="300" y1="37" x2="300" y2="407" stroke="#313244" stroke-dasharray="3 4" stroke-width="1"/>
+    <line x1="115" y1="222" x2="485" y2="222" stroke="#313244" stroke-dasharray="3 4" stroke-width="1"/>
+
+    <!-- Detected Fish Bounding Boxes (YOLOv8 + Hailo-8 HEF) -->
+    <!-- Fish 1 -->
+    <rect x="180" y="110" width="85" height="45" rx="4" fill="none" stroke="#89B4FA" stroke-width="1.8"/>
+    <rect x="180" y="94" width="70" height="16" rx="3" fill="#89B4FA"/>
+    <text x="184" y="106" font-family="monospace" font-size="9" font-weight="700" fill="#11111B">fish 98.2%</text>
+    <ellipse cx="222" cy="132" rx="28" ry="11" fill="#45475A" stroke="#89B4FA" stroke-width="1"/>
+
+    <!-- Fish 2 -->
+    <rect x="290" y="160" width="95" height="50" rx="4" fill="none" stroke="#CBA6F7" stroke-width="1.8"/>
+    <rect x="290" y="144" width="70" height="16" rx="3" fill="#CBA6F7"/>
+    <text x="294" y="156" font-family="monospace" font-size="9" font-weight="700" fill="#11111B">fish 97.4%</text>
+    <ellipse cx="337" cy="185" rx="32" ry="12" fill="#45475A" stroke="#CBA6F7" stroke-width="1"/>
+
+    <!-- Fish 3 -->
+    <rect x="160" y="240" width="80" height="42" rx="4" fill="none" stroke="#A6E3A1" stroke-width="1.8"/>
+    <rect x="160" y="224" width="70" height="16" rx="3" fill="#A6E3A1"/>
+    <text x="164" y="236" font-family="monospace" font-size="9" font-weight="700" fill="#11111B">fish 99.1%</text>
+    <ellipse cx="200" cy="261" rx="25" ry="10" fill="#45475A" stroke="#A6E3A1" stroke-width="1"/>
+
+    <!-- Fish 4 -->
+    <rect x="330" y="260" width="90" height="46" rx="4" fill="none" stroke="#F38BA8" stroke-width="1.8"/>
+    <rect x="330" y="244" width="70" height="16" rx="3" fill="#F38BA8"/>
+    <text x="334" y="256" font-family="monospace" font-size="9" font-weight="700" fill="#11111B">fish 96.8%</text>
+    <ellipse cx="375" cy="283" rx="30" ry="11" fill="#45475A" stroke="#F38BA8" stroke-width="1"/>
+
+    <!-- Bottom Camera OSD (On-Screen Display) -->
+    <rect y="415" width="600" height="30" rx="4" fill="#1E1E2E" fill-opacity="0.9"/>
+    <text x="20" y="434" font-family="monospace" font-size="10" fill="#A6E3A1">● LIVE STREAM: PiCamera2 (IMX708)</text>
+    <text x="360" y="434" font-family="monospace" font-size="10" fill="#CDD6F4">FPS: 30.0  |  RES: 1280x720</text>
+    <text x="580" y="434" font-family="monospace" font-size="10" fill="#CBA6F7" text-anchor="end">HAILO-8: 26 TOPS</text>
+  </g>
+
+  <!-- Right: Model Metrics & Count Statistics -->
+  <g transform="translate(650, 125)">
+    <rect width="280" height="445" rx="12" fill="#241B30" stroke="#594466" stroke-width="1"/>
+    <text x="20" y="32" font-family="system-ui, sans-serif" font-size="13" font-weight="700" fill="#CDD6F4">Statistik Penghitungan AI</text>
+
+    <!-- Big Counter Box -->
+    <g transform="translate(15, 50)">
+      <rect width="250" height="95" rx="10" fill="#1E1E2E" stroke="#594466" stroke-width="1"/>
+      <text x="16" y="26" font-family="system-ui, sans-serif" font-size="11" fill="#A99AB8">TOTAL IKAN TERHITUNG</text>
+      <text x="16" y="70" font-family="system-ui, sans-serif" font-size="42" font-weight="900" fill="#89B4FA">142</text>
+      <text x="110" y="65" font-family="system-ui, sans-serif" font-size="13" fill="#A6E3A1">ekor bibit</text>
+      <rect x="175" y="48" width="60" height="24" rx="12" fill="#A6E3A1" fill-opacity="0.2"/>
+      <text x="205" y="64" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#A6E3A1" text-anchor="middle">+12/detik</text>
+    </g>
+
+    <!-- Model Spec Details (from counter_pi5_npu.py) -->
+    <g transform="translate(15, 160)">
+      <rect width="250" height="175" rx="10" fill="#1E1E2E" stroke="#594466" stroke-width="1"/>
+      <text x="16" y="24" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#FAF5FF">SPESIFIKASI INFERENSI HARDWARE</text>
+
+      <text x="16" y="48" font-family="system-ui, sans-serif" font-size="11" fill="#A99AB8">Akselerator NPU:</text>
+      <text x="234" y="48" font-family="monospace" font-size="11" font-weight="700" fill="#CBA6F7" text-anchor="end">Hailo-8 M.2</text>
+
+      <text x="16" y="72" font-family="system-ui, sans-serif" font-size="11" fill="#A99AB8">Model Format:</text>
+      <text x="234" y="72" font-family="monospace" font-size="11" font-weight="700" fill="#FAF5FF" text-anchor="end">yolov8n.hef</text>
+
+      <text x="16" y="96" font-family="system-ui, sans-serif" font-size="11" fill="#A99AB8">Latensi Inferensi:</text>
+      <text x="234" y="96" font-family="monospace" font-size="11" font-weight="700" fill="#A6E3A1" text-anchor="end">4.8 ms / frame</text>
+
+      <text x="16" y="120" font-family="system-ui, sans-serif" font-size="11" fill="#A99AB8">Akurasi IoU:</text>
+      <text x="234" y="120" font-family="monospace" font-size="11" font-weight="700" fill="#89B4FA" text-anchor="end">98.4% (mAP50)</text>
+
+      <text x="16" y="144" font-family="system-ui, sans-serif" font-size="11" fill="#A99AB8">Framework:</text>
+      <text x="234" y="144" font-family="monospace" font-size="11" fill="#FAF5FF" text-anchor="end">PyTorch / MobileSAM</text>
+    </g>
+
+    <!-- Reset / Save Counts -->
+    <rect x="15" y="350" width="250" height="42" rx="8" fill="#5D3B80"/>
+    <text x="140" y="376" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#FAF5FF" text-anchor="middle">Ekspor Data Batch (Excel/CSV)</text>
+  </g>
+</svg>

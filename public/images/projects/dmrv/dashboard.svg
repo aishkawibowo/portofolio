@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="600" viewBox="0 0 960 600" fill="none">
+  <defs>
+    <linearGradient id="dmrvDarkBg" x1="0" y1="0" x2="960" y2="600" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1A1324" />
+      <stop offset="100%" stop-color="#110B18" />
+    </linearGradient>
+  </defs>
+
+  <rect width="960" height="600" rx="16" fill="url(#dmrvDarkBg)"/>
+  <rect width="960" height="600" rx="16" stroke="#594466" stroke-width="1.5"/>
+
+  <!-- Window Bar -->
+  <rect width="960" height="42" fill="#241B30" rx="16"/>
+  <rect y="30" width="960" height="12" fill="#241B30"/>
+  <line x1="0" y1="42" x2="960" y2="42" stroke="#594466" stroke-width="1"/>
+  <circle cx="28" cy="21" r="5" fill="#EF4444" opacity="0.85"/>
+  <circle cx="44" cy="21" r="5" fill="#F59E0B" opacity="0.85"/>
+  <circle cx="60" cy="21" r="5" fill="#10B981" opacity="0.85"/>
+  <text x="480" y="26" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#A99AB8" text-anchor="middle">Venambak dMRV — Digital Monitoring, Reporting &amp; Verification (App.tsx Multi-Portal)</text>
+
+  <!-- Top Portal Bar with TimePeriod (T+0, T+1, T+3, T+6, T+12 from source code) -->
+  <g transform="translate(0, 42)">
+    <rect width="960" height="46" fill="#1D1626"/>
+    <line x1="0" y1="46" x2="960" y2="46" stroke="#594466" stroke-width="1"/>
+
+    <text x="25" y="28" font-family="system-ui, sans-serif" font-size="13" font-weight="800" fill="#FAF5FF">dMRV EMISI KARBON</text>
+    
+    <!-- Role Switcher -->
+    <rect x="200" y="9" width="135" height="28" rx="6" fill="#382747"/>
+    <text x="267" y="27" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#C4A1FF" text-anchor="middle">Portal Operasional</text>
+
+    <text x="365" y="27" font-family="system-ui, sans-serif" font-size="11" fill="#A99AB8">Portal Korporat</text>
+    <text x="475" y="27" font-family="system-ui, sans-serif" font-size="11" fill="#A99AB8">Portal Petambak</text>
+    <text x="590" y="27" font-family="system-ui, sans-serif" font-size="11" fill="#A99AB8">Portal Regulator</text>
+
+    <!-- Time Period Filter (from TimePeriod type in source code) -->
+    <rect x="740" y="9" width="195" height="28" rx="6" fill="#241B30" stroke="#594466" stroke-width="1"/>
+    <text x="755" y="27" font-family="system-ui, sans-serif" font-size="10" fill="#75697D">T+0</text>
+    <text x="790" y="27" font-family="system-ui, sans-serif" font-size="10" fill="#75697D">T+1</text>
+    <text x="825" y="27" font-family="system-ui, sans-serif" font-size="10" fill="#75697D">T+3</text>
+    <rect x="850" y="11" width="35" height="24" rx="4" fill="#C4A1FF"/>
+    <text x="867" y="27" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#21152F" text-anchor="middle">T+6</text>
+    <text x="910" y="27" font-family="system-ui, sans-serif" font-size="10" fill="#75697D">T+12</text>
+  </g>
+
+  <!-- Metric Overview Cards -->
+  <g transform="translate(25, 105)">
+    <rect width="215" height="75" rx="10" fill="#241B30" stroke="#594466" stroke-width="1"/>
+    <text x="16" y="24" font-family="system-ui, sans-serif" font-size="10" fill="#A99AB8">TOTAL EMISI TERVERIFIKASI</text>
+    <text x="16" y="55" font-family="system-ui, sans-serif" font-size="22" font-weight="900" fill="#FAF5FF">42,850 tCO2e</text>
+
+    <rect x="235" width="225" height="75" rx="10" fill="#241B30" stroke="#594466" stroke-width="1"/>
+    <text x="251" y="24" font-family="system-ui, sans-serif" font-size="10" fill="#A99AB8">STATUS AUDIT REGULATOR</text>
+    <text x="251" y="55" font-family="system-ui, sans-serif" font-size="22" font-weight="900" fill="#A8D5BA">100% Verified</text>
+
+    <rect x="485" width="215" height="75" rx="10" fill="#241B30" stroke="#594466" stroke-width="1"/>
+    <text x="501" y="24" font-family="system-ui, sans-serif" font-size="10" fill="#A99AB8">SPOK &amp; AUDIT TRAIL</text>
+    <text x="501" y="55" font-family="system-ui, sans-serif" font-size="22" font-weight="900" fill="#C4A1FF">1,208 Records</text>
+
+    <rect x="725" width="210" height="75" rx="10" fill="#241B30" stroke="#594466" stroke-width="1"/>
+    <text x="741" y="24" font-family="system-ui, sans-serif" font-size="10" fill="#A99AB8">PROYEK RESTORASI MANGROVE</text>
+    <text x="741" y="55" font-family="system-ui, sans-serif" font-size="22" font-weight="900" fill="#38BDF8">4 Plot Lahan</text>
+  </g>
+
+  <!-- Left: TreeProfileDrawer & Plot Polygon Visual -->
+  <g transform="translate(25, 195)">
+    <rect width="560" height="380" rx="12" fill="#241B30" stroke="#594466" stroke-width="1"/>
+    <text x="20" y="30" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#FAF5FF">Digital Tree Polygon &amp; IoT Biomass Sensors (MOCK_TREES)</text>
+
+    <!-- Polygon Plots Mockup -->
+    <rect x="20" y="50" width="520" height="190" rx="8" fill="#140F1D" stroke="#594466" stroke-width="0.8"/>
+    
+    <!-- Plot A: Mangrove Rhizophora -->
+    <polygon points="40,80 180,60 210,170 80,180" fill="#A8D5BA" fill-opacity="0.2" stroke="#A8D5BA" stroke-width="1.5"/>
+    <text x="120" y="125" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#A8D5BA" text-anchor="middle">PLOT A (Mangrove)</text>
+    <circle cx="110" cy="95" r="3" fill="#A8D5BA"/>
+    <circle cx="140" cy="140" r="3" fill="#A8D5BA"/>
+    <circle cx="90" cy="150" r="3" fill="#A8D5BA"/>
+
+    <!-- Plot B: Avicennia Marina -->
+    <polygon points="240,70 380,85 410,190 280,175" fill="#C4A1FF" fill-opacity="0.2" stroke="#C4A1FF" stroke-width="1.5"/>
+    <text x="325" y="135" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#C4A1FF" text-anchor="middle">PLOT B (Avicennia)</text>
+    <circle cx="310" cy="105" r="3" fill="#C4A1FF"/>
+    <circle cx="360" cy="150" r="3" fill="#C4A1FF"/>
+
+    <!-- Plot C: IoT Soil & Water Sensor Grid -->
+    <polygon points="430,100 500,100 515,180 440,180" fill="#38BDF8" fill-opacity="0.2" stroke="#38BDF8" stroke-width="1.5"/>
+    <text x="470" y="145" font-family="system-ui, sans-serif" font-size="9" font-weight="700" fill="#38BDF8" text-anchor="middle">PLOT C (IoT)</text>
+
+    <!-- Bottom Biomass Carbon Table -->
+    <g transform="translate(20, 255)">
+      <rect width="520" height="105" rx="8" fill="#1D1626"/>
+      <text x="14" y="22" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#FAF5FF">Spesifikasi Biomasa Pohon (MOCK_TREES &amp; MOCK_PLOTS)</text>
+      <text x="14" y="44" font-family="monospace" font-size="10" fill="#A99AB8">• Pohon #TR-018: Diameter Batang 18.4 cm • Tinggi 6.2 m • Karbon: 42.1 kg</text>
+      <text x="14" y="64" font-family="monospace" font-size="10" fill="#A99AB8">• Pohon #TR-019: Diameter Batang 22.1 cm • Tinggi 7.8 m • Karbon: 58.4 kg</text>
+      <text x="14" y="84" font-family="monospace" font-size="10" fill="#A8D5BA">• Estimasi Sekuestrasi Plot A (T+6): +14.2 ton CO2 per Hektar per Tahun</text>
+    </g>
+  </g>
+
+  <!-- Right: Verification Audit Workflow -->
+  <g transform="translate(605, 195)">
+    <rect width="330" height="380" rx="12" fill="#241B30" stroke="#594466" stroke-width="1"/>
+    <text x="20" y="30" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#FAF5FF">Tahapan Verifikasi dMRV</text>
+
+    <!-- Steps -->
+    <g transform="translate(20, 55)">
+      <circle cx="12" cy="12" r="10" fill="#A8D5BA"/>
+      <text x="12" y="16" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#17121F" text-anchor="middle">✓</text>
+      <text x="32" y="10" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#FAF5FF">1. Monitoring Sensor IoT</text>
+      <text x="32" y="24" font-family="system-ui, sans-serif" font-size="9" fill="#A8D5BA">100% Data Telemetri Masuk</text>
+
+      <line x1="12" y1="28" x2="12" y2="58" stroke="#A8D5BA" stroke-width="1.5"/>
+
+      <circle cx="12" cy="72" r="10" fill="#A8D5BA"/>
+      <text x="12" y="76" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#17121F" text-anchor="middle">✓</text>
+      <text x="32" y="70" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#FAF5FF">2. Penghitungan Baseline</text>
+      <text x="32" y="84" font-family="system-ui, sans-serif" font-size="9" fill="#A8D5BA">Metode IPCC Allometric</text>
+
+      <line x1="12" y1="88" x2="12" y2="118" stroke="#A8D5BA" stroke-width="1.5"/>
+
+      <circle cx="12" cy="132" r="10" fill="#A8D5BA"/>
+      <text x="12" y="136" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#17121F" text-anchor="middle">✓</text>
+      <text x="32" y="130" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#FAF5FF">3. Audit Internal Operasional</text>
+      <text x="32" y="144" font-family="system-ui, sans-serif" font-size="9" fill="#A8D5BA">Diverifikasi oleh Hendra W.</text>
+
+      <line x1="12" y1="148" x2="12" y2="178" stroke="#C4A1FF" stroke-width="1.5"/>
+
+      <circle cx="12" cy="192" r="10" fill="#382747" stroke="#C4A1FF" stroke-width="2"/>
+      <circle cx="12" cy="192" r="4" fill="#C4A1FF"/>
+      <text x="32" y="190" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#FAF5FF">4. Review Regulator (T+6)</text>
+      <text x="32" y="204" font-family="system-ui, sans-serif" font-size="9" fill="#C4A1FF">Sertifikasi Kredit Karbon</text>
+    </g>
+
+    <rect x="20" y="320" width="290" height="40" rx="8" fill="#5D3B80"/>
+    <text x="165" y="344" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#FAF5FF" text-anchor="middle">Unduh Laporan Audit PDF 📄</text>
+  </g>
+</svg>

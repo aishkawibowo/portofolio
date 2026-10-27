@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="560" viewBox="0 0 900 560" fill="none">
+  <defs>
+    <linearGradient id="iotAnaBg" x1="0" y1="0" x2="900" y2="560" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#191322" />
+      <stop offset="100%" stop-color="#110C17" />
+    </linearGradient>
+  </defs>
+
+  <rect width="900" height="560" rx="16" fill="url(#iotAnaBg)"/>
+  <rect width="900" height="560" rx="16" stroke="#594466" stroke-width="1.5"/>
+
+  <!-- macOS Window Bar -->
+  <rect width="900" height="42" fill="#241B30" rx="16"/>
+  <rect y="30" width="900" height="12" fill="#241B30"/>
+  <line x1="0" y1="42" x2="900" y2="42" stroke="#594466" stroke-width="1"/>
+  <circle cx="28" cy="21" r="5" fill="#EF4444" opacity="0.85"/>
+  <circle cx="44" cy="21" r="5" fill="#F59E0B" opacity="0.85"/>
+  <circle cx="60" cy="21" r="5" fill="#10B981" opacity="0.85"/>
+  <text x="450" y="26" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#A99AB8" text-anchor="middle">Venambak IoT Aquaculture — Pakan &amp; Energy Analytics (Screen 3/8: Analitik Sensor)</text>
+
+  <!-- Big Feed Dispense Chart Panel -->
+  <g transform="translate(30, 60)">
+    <rect width="840" height="230" rx="12" fill="#241B30" stroke="#594466" stroke-width="1"/>
+    <text x="24" y="30" font-family="system-ui, sans-serif" font-size="13" font-weight="700" fill="#FAF5FF">Jumlah Pakan Keluar Mingguan (FeederVe Smart Dispenser)</text>
+    <text x="24" y="46" font-family="system-ui, sans-serif" font-size="11" fill="#A99AB8">Rata-rata: 1.7 kg/hari • Total Akumulasi: 11.60 kg • Puncak: 8.4 kg pada 21 Okt</text>
+
+    <!-- Grid lines -->
+    <line x1="60" y1="180" x2="790" y2="180" stroke="#594466" stroke-width="1"/>
+    <line x1="60" y1="135" x2="790" y2="135" stroke="#594466" stroke-dasharray="3 3" opacity="0.3"/>
+    <line x1="60" y1="90" x2="790" y2="90" stroke="#594466" stroke-dasharray="3 3" opacity="0.3"/>
+
+    <!-- Curve for feed dispense -->
+    <path d="M60,175 Q160,175 260,174 T460,172 T660,135 T790,80" stroke="#38BDF8" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+    
+    <!-- Area under curve -->
+    <path d="M60,175 Q160,175 260,174 T460,172 T660,135 T790,80 L790,180 L60,180 Z" fill="#38BDF8" fill-opacity="0.1"/>
+
+    <!-- Nodes -->
+    <circle cx="60" cy="175" r="4" fill="#38BDF8"/>
+    <circle cx="180" cy="175" r="4" fill="#38BDF8"/>
+    <circle cx="300" cy="174" r="4" fill="#38BDF8"/>
+    <circle cx="420" cy="173" r="4" fill="#38BDF8"/>
+    <circle cx="540" cy="168" r="4" fill="#38BDF8"/>
+    <circle cx="660" cy="135" r="4" fill="#38BDF8"/>
+    <circle cx="790" cy="80" r="6" fill="#FAF5FF" stroke="#38BDF8" stroke-width="2.5"/>
+
+    <!-- Peak callout -->
+    <rect x="720" y="48" width="90" height="24" rx="6" fill="#17121F" stroke="#38BDF8" stroke-width="1"/>
+    <text x="765" y="64" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#38BDF8" text-anchor="middle">Puncak: 8.4 kg</text>
+
+    <!-- X labels -->
+    <text x="60" y="200" font-family="monospace" font-size="10" fill="#75697D">27/10</text>
+    <text x="180" y="200" font-family="monospace" font-size="10" fill="#75697D">26/10</text>
+    <text x="300" y="200" font-family="monospace" font-size="10" fill="#75697D">25/10</text>
+    <text x="420" y="200" font-family="monospace" font-size="10" fill="#75697D">24/10</text>
+    <text x="540" y="200" font-family="monospace" font-size="10" fill="#75697D">23/10</text>
+    <text x="660" y="200" font-family="monospace" font-size="10" fill="#75697D">22/10</text>
+    <text x="790" y="200" font-family="monospace" font-size="10" fill="#75697D">21/10</text>
+  </g>
+
+  <!-- Energy Chart Panel -->
+  <g transform="translate(30, 305)">
+    <rect width="840" height="230" rx="12" fill="#241B30" stroke="#594466" stroke-width="1"/>
+    <text x="24" y="30" font-family="system-ui, sans-serif" font-size="13" font-weight="700" fill="#FAF5FF">Rata-Rata Konsumsi Energi Listrik (kWh) per Blok Kolam</text>
+    <text x="24" y="46" font-family="system-ui, sans-serif" font-size="11" fill="#A99AB8">Monitoring beban daya aerator kincir &amp; blower tambak via Smart Energy Meter</text>
+
+    <!-- Bars for Energy -->
+    <line x1="60" y1="180" x2="790" y2="180" stroke="#594466" stroke-width="1"/>
+    <line x1="60" y1="130" x2="790" y2="130" stroke="#594466" stroke-dasharray="3 3" opacity="0.3"/>
+    <line x1="60" y1="80" x2="790" y2="80" stroke="#594466" stroke-dasharray="3 3" opacity="0.3"/>
+
+    <!-- Bar Sets -->
+    <rect x="100" y="110" width="36" height="70" rx="4" fill="#C4A1FF"/>
+    <text x="118" y="100" font-family="system-ui, sans-serif" font-size="10" fill="#C4A1FF" font-weight="700" text-anchor="middle">98 kWh</text>
+    <text x="118" y="198" font-family="system-ui, sans-serif" font-size="11" fill="#A99AB8" text-anchor="middle">Blok A1</text>
+
+    <rect x="220" y="90" width="36" height="90" rx="4" fill="#C4A1FF"/>
+    <text x="238" y="80" font-family="system-ui, sans-serif" font-size="10" fill="#C4A1FF" font-weight="700" text-anchor="middle">124 kWh</text>
+    <text x="238" y="198" font-family="system-ui, sans-serif" font-size="11" fill="#A99AB8" text-anchor="middle">Blok A2</text>
+
+    <rect x="340" y="65" width="36" height="115" rx="4" fill="#E6A8C7"/>
+    <text x="358" y="55" font-family="system-ui, sans-serif" font-size="10" fill="#E6A8C7" font-weight="700" text-anchor="middle">160.6 kWh</text>
+    <text x="358" y="198" font-family="system-ui, sans-serif" font-size="11" fill="#A99AB8" text-anchor="middle">Blok B1 (Puncak)</text>
+
+    <rect x="460" y="95" width="36" height="85" rx="4" fill="#C4A1FF"/>
+    <text x="478" y="85" font-family="system-ui, sans-serif" font-size="10" fill="#C4A1FF" font-weight="700" text-anchor="middle">115 kWh</text>
+    <text x="478" y="198" font-family="system-ui, sans-serif" font-size="11" fill="#A99AB8" text-anchor="middle">Blok B2</text>
+
+    <rect x="580" y="125" width="36" height="55" rx="4" fill="#C4A1FF"/>
+    <text x="598" y="115" font-family="system-ui, sans-serif" font-size="10" fill="#C4A1FF" font-weight="700" text-anchor="middle">84 kWh</text>
+    <text x="598" y="198" font-family="system-ui, sans-serif" font-size="11" fill="#A99AB8" text-anchor="middle">Blok C1</text>
+
+    <rect x="700" y="140" width="36" height="40" rx="4" fill="#38BDF8"/>
+    <text x="718" y="130" font-family="system-ui, sans-serif" font-size="10" fill="#38BDF8" font-weight="700" text-anchor="middle">62 kWh</text>
+    <text x="718" y="198" font-family="system-ui, sans-serif" font-size="11" fill="#A99AB8" text-anchor="middle">Nursery Pool</text>
+  </g>
+</svg>
