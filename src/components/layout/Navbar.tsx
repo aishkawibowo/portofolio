@@ -7,6 +7,7 @@ import { Menu, X, Mail } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { NAV_LINKS, SITE } from '@/lib/site';
 import { ThemeToggle } from '@/components/ui/ThemeToggle';
+import { SoundToggle } from '@/components/ui/SoundToggle';
 import { SocialIcon } from '@/components/ui/SocialIcon';
 
 export function Navbar() {
@@ -106,12 +107,14 @@ export function Navbar() {
           >
             Kontak
           </a>
-          <div className="ml-1">
+          <div className="ml-1 flex items-center gap-1.5">
+            <SoundToggle />
             <ThemeToggle />
           </div>
         </div>
 
-        <div className="flex items-center gap-2 md:hidden">
+        <div className="flex items-center gap-1.5 md:hidden">
+          <SoundToggle />
           <ThemeToggle />
           <button
             className="rounded-lg border border-border-subtle p-2 text-text-secondary transition-colors hover:text-purple-primary focus-ring"

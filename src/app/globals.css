@@ -228,3 +228,34 @@ body {
     background-position: 200% center;
   }
 }
+
+@media (pointer: fine) {
+  body,
+  a,
+  button,
+  select,
+  [role="button"],
+  .glass-card,
+  summary,
+  nav,
+  header,
+  main,
+  footer,
+  section,
+  div,
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  span {
+    cursor: none;
+  }
+  input,
+  textarea {
+    cursor: text;
+  }
+}
+
