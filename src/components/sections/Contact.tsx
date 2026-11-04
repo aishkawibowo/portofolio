@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { Reveal } from '@/components/ui/Reveal';
 import { SocialIcon } from '@/components/ui/SocialIcon';
-import { Mail, Send, Check, ExternalLink, Copy, RotateCcw } from 'lucide-react';
+import { Mail, Send, Check, Loader2, AlertCircle } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const contactLinks = [
@@ -33,42 +33,45 @@ export function Contact() {
     email: '',
     message: '',
   });
-  const [isSending, setIsSending] = useState(false);
-  const [sent, setSent] = useState(false);
-  const [copied, setCopied] = useState(false);
+  const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState('');
 
-  const subject = encodeURIComponent(`Pesan Portofolio dari ${formData.name || 'Pengunjung'}`);
-  const bodyText = `Halo Aishka,\n\nNama: ${formData.name}\nEmail: ${formData.email}\n\nPesan:\n${formData.message}\n\n---\nDikirim via Portofolio Aishka Wibowo`;
-  const body = encodeURIComponent(bodyText);
-
-  const mailtoUrl = `mailto:aishkawibowo4@gmail.com?subject=${subject}&body=${body}`;
-  const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=aishkawibowo4@gmail.com&su=${subject}&body=${body}`;
-
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formData.name || !formData.email || !formData.message) return;
+    if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) return;
 
-    setIsSending(true);
+    setStatus('sending');
+    setErrorMessage('');
 
-    // Buka aplikasi email default
-    window.location.href = mailtoUrl;
+    try {
+      const response = await fetch('https://formsubmit.co/ajax/aishkawibowo4@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          _subject: `Pesan Portofolio Baru dari ${formData.name}`,
+          _captcha: 'false',
+          _template: 'table',
+        }),
+      });
 
-    setTimeout(() => {
-      setIsSending(false);
-      setSent(true);
-    }, 600);
-  };
-
-  const handleCopy = () => {
-    navigator.clipboard.writeText(bodyText);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
-
-  const handleReset = () => {
-    setFormData({ name: '', email: '', message: '' });
-    setSent(false);
-    setCopied(false);
+      if (response.ok) {
+        setStatus('success');
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        const data = await response.json().catch(() => null);
+        setStatus('error');
+        setErrorMessage(data?.message || 'Gagal mengirim pesan. Silakan coba lagi.');
+      }
+    } catch {
+      setStatus('error');
+      setErrorMessage('Koneksi terputus. Silakan periksa jaringan Anda atau hubungi langsung via email.');
+    }
   };
 
   return (
@@ -116,7 +119,26 @@ export function Contact() {
 
           <div className="glass-card p-6 sm:p-8 rounded-2xl border border-border-subtle bg-bg-surface">
             <Reveal>
-              {!sent ? (
+              {status === 'success' ? (
+                <div className="py-8 text-center space-y-4">
+                  <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-[#A8D5BA]/20 text-[#A8D5BA] border border-[#A8D5BA]/40 shadow-lg shadow-[#A8D5BA]/10">
+                    <Check size={28} />
+                  </div>
+                  <h3 className="font-display text-2xl font-bold text-text-primary">
+                    Pesan Berhasil Terkirim!
+                  </h3>
+                  <p className="text-sm text-text-secondary max-w-md mx-auto leading-relaxed">
+                    Terima kasih telah menghubungi saya. Pesan Anda telah otomatis terkirim langsung ke email saya (<span className="text-purple-primary font-medium">aishkawibowo4@gmail.com</span>) dan akan segera saya tanggapi.
+                  </p>
+                  <button
+                    type="button"
+                    onClick={() => setStatus('idle')}
+                    className="mt-4 inline-flex items-center gap-2 px-6 py-2.5 rounded-xl border border-border-subtle bg-bg-elevated text-xs font-semibold text-text-secondary hover:border-purple-primary hover:text-text-primary transition-all cursor-pointer"
+                  >
+                    Kirim Pesan Lain
+                  </button>
+                </div>
+              ) : (
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div>
                     <label htmlFor="name" className="block text-xs font-semibold text-text-muted uppercase tracking-wider mb-2">
@@ -130,6 +152,7 @@ export function Contact() {
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       className="w-full px-4 py-3 rounded-xl bg-bg-elevated border border-border-subtle text-text-primary placeholder-text-muted focus:ring-2 focus:ring-purple-primary focus:border-transparent transition-colors"
                       placeholder="Nama Anda"
+                      disabled={status === 'sending'}
                     />
                   </div>
 
@@ -145,6 +168,7 @@ export function Contact() {
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       className="w-full px-4 py-3 rounded-xl bg-bg-elevated border border-border-subtle text-text-primary placeholder-text-muted focus:ring-2 focus:ring-purple-primary focus:border-transparent transition-colors"
                       placeholder="you@example.com"
+                      disabled={status === 'sending'}
                     />
                   </div>
 
@@ -160,75 +184,40 @@ export function Contact() {
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       className="w-full px-4 py-3 rounded-xl bg-bg-elevated border border-border-subtle text-text-primary placeholder-text-muted focus:ring-2 focus:ring-purple-primary focus:border-transparent transition-colors"
                       placeholder="Ceritakan tentang proyek atau ide yang ingin Anda diskusikan..."
+                      disabled={status === 'sending'}
                     />
                   </div>
 
+                  {status === 'error' && (
+                    <div className="flex items-center gap-2 p-3 rounded-xl bg-red-500/10 border border-red-500/30 text-red-400 text-xs">
+                      <AlertCircle size={16} className="shrink-0" />
+                      <span>{errorMessage}</span>
+                    </div>
+                  )}
+
                   <button
                     type="submit"
-                    disabled={isSending}
+                    disabled={status === 'sending'}
                     className={cn(
                       'w-full px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-300 focus-ring cursor-pointer flex items-center justify-center gap-2',
-                      isSending
-                        ? 'bg-purple-primary/50 text-on-accent cursor-not-allowed'
+                      status === 'sending'
+                        ? 'bg-purple-primary/60 text-on-accent cursor-wait'
                         : 'bg-purple-primary text-on-accent shadow-lg shadow-purple-primary/25 hover:scale-[1.02]'
                     )}
                   >
-                    {isSending ? 'Menyiapkan Email...' : 'Kirim Pesan'}
-                    <Send size={16} />
+                    {status === 'sending' ? (
+                      <>
+                        <Loader2 size={16} className="animate-spin" />
+                        <span>Mengirim Pesan...</span>
+                      </>
+                    ) : (
+                      <>
+                        <span>Kirim Pesan</span>
+                        <Send size={16} />
+                      </>
+                    )}
                   </button>
                 </form>
-              ) : (
-                <div className="space-y-4">
-                  <div className="p-4 rounded-xl bg-purple-primary/10 border border-purple-primary/20 text-text-primary text-sm space-y-2">
-                    <div className="flex items-center gap-2 font-semibold text-purple-primary">
-                      <Check size={18} />
-                      <span>Pesan Siap Dikirim ke aishkawibowo4@gmail.com</span>
-                    </div>
-                    <p className="text-xs text-text-secondary leading-relaxed">
-                      Pilih metode pengiriman yang paling nyaman untuk Anda di bawah ini:
-                    </p>
-                  </div>
-
-                  <div className="grid sm:grid-cols-2 gap-3 pt-2">
-                    <a
-                      href={gmailUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-purple-primary text-on-accent text-xs font-bold shadow-md shadow-purple-primary/20 hover:scale-[1.02] transition-all"
-                    >
-                      <span>Buka di Gmail Web</span>
-                      <ExternalLink size={14} />
-                    </a>
-
-                    <a
-                      href={mailtoUrl}
-                      className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl border border-border-subtle bg-bg-elevated text-text-primary text-xs font-semibold hover:border-purple-primary transition-all"
-                    >
-                      <Mail size={14} />
-                      <span>Aplikasi Email Default</span>
-                    </a>
-                  </div>
-
-                  <div className="flex items-center justify-between pt-2 border-t border-border-subtle">
-                    <button
-                      type="button"
-                      onClick={handleCopy}
-                      className="inline-flex items-center gap-1.5 text-xs text-text-muted hover:text-purple-primary transition-colors cursor-pointer"
-                    >
-                      {copied ? <Check size={13} className="text-emerald-400" /> : <Copy size={13} />}
-                      <span>{copied ? 'Teks Tersalin!' : 'Salin Teks Pesan'}</span>
-                    </button>
-
-                    <button
-                      type="button"
-                      onClick={handleReset}
-                      className="inline-flex items-center gap-1.5 text-xs text-text-muted hover:text-purple-primary transition-colors cursor-pointer"
-                    >
-                      <RotateCcw size={13} />
-                      <span>Tulis Pesan Lain</span>
-                    </button>
-                  </div>
-                </div>
               )}
             </Reveal>
           </div>
