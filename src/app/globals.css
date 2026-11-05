@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 /* Light Theme */
 :root {
   --color-bg-base: #FBF7F2;
@@ -16,11 +18,12 @@
   --color-rose-accent: #B96F91;
   --color-ornament: #E8D7B9;
   
-  --color-text-primary: #2B2433;
-  --color-text-secondary: #49404F;
-  --color-text-muted: #75697D;
+  --color-text-primary: #221B29;
+  --color-text-secondary: #3D3545;
+  --color-text-muted: #5F5269;
   --color-on-accent: #FFFFFF;
   --color-badge: #F1EAF7;
+  --color-badge-text: #5D3B80;
   --color-success: #2E7D32;
 
   --font-display: var(--font-space-grotesk);

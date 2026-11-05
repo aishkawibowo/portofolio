@@ -60,7 +60,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
           {project.title}
         </h3>
 
-        <p className="mt-1.5 line-clamp-2 text-xs leading-relaxed text-text-secondary">
+        <p className="mt-1.5 line-clamp-2 text-xs leading-relaxed text-text-secondary font-medium">
           {project.summary}
         </p>
 
@@ -68,13 +68,13 @@ export function ProjectCard({ project }: ProjectCardProps) {
           {project.tech.slice(0, 4).map((t) => (
             <span
               key={t}
-              className="rounded-lg border border-border-subtle bg-bg-elevated/70 dark:bg-[#30223D] px-2.5 py-1 text-[11px] font-medium text-text-muted transition-colors duration-300 group-hover:border-purple-primary/40 group-hover:text-text-primary"
+              className="rounded-lg border border-purple-primary/20 bg-purple-primary/10 text-purple-primary dark:border-[#594466] dark:bg-[#30223D] dark:text-[#D4C9E2] px-2.5 py-1 text-[11px] font-semibold transition-colors duration-300 group-hover:border-purple-primary/50"
             >
               {t}
             </span>
           ))}
           {project.tech.length > 4 && (
-            <span className="text-[11px] text-text-muted font-medium">+{project.tech.length - 4}</span>
+            <span className="text-[11px] font-semibold text-purple-primary dark:text-text-muted">+{project.tech.length - 4}</span>
           )}
         </div>
       </a>

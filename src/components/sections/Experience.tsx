@@ -96,7 +96,11 @@ export function Experience() {
 
                   <div className="flex flex-wrap gap-2 pt-3 border-t border-border-subtle/60">
                     {exp.tech.map((t) => (
-                      <Badge key={t} variant="outline" className="px-2.5 py-1 text-[11px] bg-bg-elevated/70 dark:bg-[#30223D]">
+                      <Badge
+                        key={t}
+                        variant="outline"
+                        className="px-2.5 py-1 text-[11px] font-semibold border-purple-primary/20 bg-purple-primary/10 text-purple-primary dark:border-[#594466] dark:bg-[#30223D] dark:text-[#D4C9E2]"
+                      >
                         {t}
                       </Badge>
                     ))}
