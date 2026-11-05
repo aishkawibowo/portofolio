@@ -15,19 +15,21 @@ export const projects: Project[] = [
     summary:
       'Platform monitoring IoT untuk device dan sensor secara real-time, mencakup dashboard 8 layar, manajemen pengguna berbasis role, dan sistem notifikasi Web Push.',
     description: [
-      'Sistem monitoring IoT yang dikembangkan sebagai Frontend Developer di PT Venambak Kail Dipantara. Aplikasi ini menjadi pusat kendali device dan sensor yang digunakan operasional harian perusahaan.',
-      'Dibangun dengan Next.js App Router, React 19, TypeScript, dan Tailwind CSS v4 untuk frontend, didukung oleh Node.js, Express, dan MQTT untuk backend. Visualisasi data sensor menggunakan Chart.js dan Recharts.',
+      'Sistem monitoring IoT aquaculture yang dikembangkan di PT Venambak Kail Dipantara. Aplikasi ini menjadi pusat kendali dan telemetri device serta sensor yang digunakan dalam operasional harian tambak.',
+      'Dibangun dengan Next.js App Router, React 19, TypeScript, dan Tailwind CSS untuk frontend, terintegrasi dengan backend performa tinggi (veng-backend) berbasis Python, FastAPI, WebSockets, dan MQTT broker. Visualisasi data sensor menggunakan Chart.js dan Recharts, diorkestrasi menggunakan Docker Compose di server Linux.',
     ],
     highlights: [
       'Membangun 8 layar dashboard monitoring real-time (Overview, Device, Pool, Sensor, User, UserList, AutoVenjet, WQMS)',
+      'Integrasi telemetri latensi rendah dengan Python FastAPI, WebSocket, dan Mosquitto MQTT broker',
       'Mengimplementasikan autentikasi dan manajemen pengguna berbasis role',
-      'Menggabungkan Chart.js dan Recharts untuk visualisasi data sensor',
-      'Mengembangkan sistem notifikasi Web Push untuk peringatan device',
-      'Mengatur arsitektur fitur-basis dengan folder features/, components/, lib/, dan hooks/',
+      'Menggabungkan Chart.js dan Recharts untuk visualisasi data sensor kualitas air (WQMS) dan pakan',
+      'Mengembangkan sistem notifikasi Web Push untuk peringatan anomali device',
+      'Deploy dan orkestrasi container dengan Docker Compose, Caddy reverse proxy, dan Linux server administration',
     ],
     tech: [
-      'Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Node.js',
-      'Express', 'MQTT', 'REST API', 'Chart.js', 'Recharts',
+      'Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Python',
+      'FastAPI', 'PostgreSQL', 'MQTT', 'WebSocket', 'Docker',
+      'Linux Server', 'REST API', 'Chart.js', 'Recharts',
     ],
     metrics: [
       { label: 'Dashboard screens', value: '8' },
@@ -375,18 +377,25 @@ export const projects: Project[] = [
   },
   {
     slug: 'iot-backend-service',
-    title: 'IoT Backend Service',
-    subtitle: 'API ingestion sensor + penanganan MQTT broker',
+    title: 'veng-backend (IoT Backend Service)',
+    subtitle: 'High-performance IoT telemetry ingestion & control API',
     category: 'backend',
     categories: ['backend'],
-    role: 'contribution',
-    roleLabel: 'Contribution',
+    role: 'full-development',
+    roleLabel: 'Full Development',
     period: '2026',
-    status: 'ongoing',
-    summary: 'API ingestion sensor dan penanganan MQTT broker.',
-    description: [],
-    highlights: ['Mengembangkan API ingestion sensor dan menangani MQTT broker'],
-    tech: ['Node.js', 'Express', 'MQTT'],
+    status: 'active',
+    organization: 'PT Venambak Kail Dipantara',
+    summary: 'Backend service inti (veng-backend) untuk ingestion sensor IoT, MQTT broker handler, dan kontrol aktuator berbasis Python FastAPI.',
+    description: [
+      'Service backend utama (veng-backend) yang menangani telemetri sensor IoT aquaculture secara real-time, ingestion data WQMS & konsumsi energi, serta transmisi perintah kontrol aktuator (AutoVe, feeder, blower) menggunakan Python, FastAPI, MQTT, WebSocket, dan PostgreSQL.'
+    ],
+    highlights: [
+      'Membangun REST API berkecepatan tinggi & WebSocket real-time dengan Python dan FastAPI',
+      'Integrasi Mosquitto MQTT broker untuk data ingestion sensor dan kontrol relay device aquaculture',
+      'Manajemen database PostgreSQL dengan connection pooling PgBouncer dan orkestrasi Docker Compose di server Linux'
+    ],
+    tech: ['Python', 'FastAPI', 'PostgreSQL', 'PgBouncer', 'MQTT', 'WebSocket', 'Docker', 'Linux Server', 'REST API'],
     images: [],
     links: [],
     featured: false,
