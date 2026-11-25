@@ -7,6 +7,7 @@ export const SITE = {
   url: process.env.NEXT_PUBLIC_SITE_URL || 'https://aishka-wibowo.vercel.app',
   ogImage: '/og-default.png',
   email: 'aishkawibowo4@gmail.com',
+  gmailCompose: 'https://mail.google.com/mail/?view=cm&fs=1&to=aishkawibowo4@gmail.com',
   whatsapp: 'https://wa.me/message/5KZXOI6UTK6VB1',
   location: 'Sidoarjo, Jawa Timur, Indonesia',
 } as const;

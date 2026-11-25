@@ -1,9 +1,10 @@
 'use client';
 
+import { useState } from 'react';
 import { Reveal } from '@/components/ui/Reveal';
 import { SocialIcon } from '@/components/ui/SocialIcon';
 import { SITE } from '@/lib/site';
-import { Mail, MessageCircle, ArrowUpRight } from 'lucide-react';
+import { Mail, MessageCircle, ArrowUpRight, Copy, Check } from 'lucide-react';
 
 const contactLinks = [
   {
@@ -16,9 +17,9 @@ const contactLinks = [
   {
     label: 'Email',
     display: SITE.email,
-    href: `mailto:${SITE.email}`,
+    href: SITE.gmailCompose,
     icon: <Mail size={18} />,
-    external: false,
+    external: true,
   },
   {
     label: 'GitHub',
@@ -37,6 +38,14 @@ const contactLinks = [
 ];
 
 export function Contact() {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopyEmail = () => {
+    navigator.clipboard.writeText(SITE.email);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
   return (
     <section id="contact" className="py-20 md:py-32">
       <div className="max-w-6xl mx-auto px-5 sm:px-8">
@@ -122,13 +131,35 @@ export function Contact() {
                     />
                   </a>
 
-                  <a
-                    href={`mailto:${SITE.email}`}
-                    className="w-full px-6 py-3 rounded-xl font-semibold text-xs border border-border-subtle bg-bg-elevated text-text-secondary hover:border-purple-primary hover:text-purple-primary transition-all duration-300 focus-ring flex items-center justify-center gap-2"
-                  >
-                    <Mail size={15} aria-hidden="true" />
-                    <span>Atau kirim email ke {SITE.email}</span>
-                  </a>
+                  <div className="flex gap-2">
+                    <a
+                      href={SITE.gmailCompose}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 px-4 py-3 rounded-xl font-semibold text-xs border border-border-subtle bg-bg-elevated text-text-secondary hover:border-purple-primary hover:text-purple-primary transition-all duration-300 focus-ring flex items-center justify-center gap-2"
+                    >
+                      <Mail size={15} aria-hidden="true" />
+                      <span>Kirim via Gmail</span>
+                    </a>
+                    <button
+                      type="button"
+                      onClick={handleCopyEmail}
+                      className="px-4 py-3 rounded-xl font-semibold text-xs border border-border-subtle bg-bg-elevated text-text-secondary hover:border-purple-primary hover:text-purple-primary transition-all duration-300 focus-ring flex items-center justify-center gap-1.5 cursor-pointer"
+                      title="Salin alamat email"
+                    >
+                      {copied ? (
+                        <>
+                          <Check size={14} className="text-emerald-500" aria-hidden="true" />
+                          <span className="text-emerald-600 dark:text-[#A8D5BA]">Tersalin</span>
+                        </>
+                      ) : (
+                        <>
+                          <Copy size={14} aria-hidden="true" />
+                          <span>Salin Email</span>
+                        </>
+                      )}
+                    </button>
+                  </div>
                 </div>
               </div>
             </Reveal>

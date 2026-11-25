@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { SocialIcon } from '@/components/ui/SocialIcon';
+import { SITE } from '@/lib/site';
 import { Mail } from 'lucide-react';
 
 export function Footer() {
@@ -48,7 +49,9 @@ export function Footer() {
               <SocialIcon name="Linkedin" className="h-5 w-5" />
             </a>
             <a
-              href="mailto:aishkawibowo4@gmail.com"
+              href={SITE.gmailCompose}
+              target="_blank"
+              rel="noopener noreferrer"
               className="glass-card group h-9 w-9 rounded-lg flex items-center justify-center text-text-muted hover:text-purple-primary transition-colors duration-300 hover:-translate-y-0.5"
               aria-label="Email"
             >

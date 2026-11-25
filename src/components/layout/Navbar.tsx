@@ -102,7 +102,9 @@ export function Navbar() {
             );
           })}
           <a
-            href={`mailto:${SITE.email}`}
+            href={SITE.whatsapp}
+            target="_blank"
+            rel="noopener noreferrer"
             className="ml-2 rounded-xl bg-purple-primary px-4 py-2 text-xs font-bold text-on-accent shadow-md shadow-purple-primary/20 transition-all duration-300 hover:scale-[1.04] hover:shadow-lg focus-ring"
           >
             Kontak
@@ -165,7 +167,9 @@ export function Navbar() {
               <SocialIcon name="Linkedin" />
             </a>
             <a
-              href={`mailto:${SITE.email}`}
+              href={SITE.gmailCompose}
+              target="_blank"
+              rel="noopener noreferrer"
               className="rounded-xl border border-border-subtle bg-bg-surface p-2.5 text-text-secondary transition-colors hover:border-purple-primary hover:text-purple-primary focus-ring"
               aria-label="Email"
             >
